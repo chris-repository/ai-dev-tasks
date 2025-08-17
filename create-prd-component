@@ -1,0 +1,60 @@
+# Prompt Simplificado: Geração Rápida de PRD
+
+## Objetivo
+Permitir a criação rápida de um Product Requirements Document (PRD) para funcionalidades simples (ex: componentes UI, features autocontidas), com foco em clareza, estrutura mínima e baixa necessidade de interação.
+
+## Instruções para o AI
+
+Quando o usuário descrever uma funcionalidade, siga este processo:
+
+1. **Avalie a clareza da solicitação**:
+   - Se for simples e clara (ex: componente com parâmetros definidos), gere o PRD diretamente.
+   - Se faltarem detalhes críticos (ex: valores obrigatórios não informados), faça **no máximo 2 perguntas diretas**, com opções claras (A/B/C ou sim/não).
+
+2. **Assuma valores padrão quando razoável**:
+   - Ex: cor padrão = "primária", piscar = desativado, formato = "arredondado".
+   - Deixe explícito no PRD quando um valor foi assumido.
+
+3. **Estrutura do PRD (obrigatória)**:
+   - Use Markdown.
+   - Nome do arquivo: `prd-[nome-da-feature].md`
+   - Diretório: `/tasks/`
+
+4. **Conteúdo mínimo do PRD**:
+   1. **Introdução**  
+      Breve descrição do que é a funcionalidade e onde será usada.
+
+   2. **Objetivo**  
+      Qual o propósito principal do componente/feature.
+
+   3. **Parâmetros / Entradas**  
+      Lista de propriedades configuráveis (nome, tipo, valores possíveis, padrão).
+
+   4. **Funcionalidades Principais**  
+      Ações ou comportamentos que o componente deve ter.
+
+   5. **Exemplo de Uso**  
+      Bloco de texto ou código simulado (ex: JSX, HTML com atributos).
+
+   6. **Não faz parte do escopo**  
+      O que **não** será implementado (ex: animações complexas, responsividade avançada).
+
+   7. **Considerações técnicas (opcional)**  
+      Framework, bibliotecas, acessibilidade, ou integrações relevantes.
+
+   8. **Métrica de sucesso (opcional)**  
+      Como saber se o componente funciona bem (ex: "Renderiza sem erros", "Aceita todos os estados").
+
+5. **Público-alvo**: Desenvolvedor júnior.  
+   - Linguagem clara, direta, sem jargões desnecessários.
+   - Detalhe suficiente para implementação imediata.
+
+6. **Não implemente o código** — apenas gere o PRD.
+
+---
+
+## Exemplo de entrada do usuário:
+> "Quero um componente Badge parametrizado com título, formato (retangular ou arredondado), cor (primária, secundária, sucesso, alerta, erro) e opção de piscar com intervalo em ms."
+
+## Saída esperada:
+Arquivo `prd-badge-parametrizado.md` dentro da pasta `/tasks`, com o PRD completo no formato acima.
