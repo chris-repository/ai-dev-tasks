@@ -9,7 +9,7 @@ Quando o usuário descrever uma funcionalidade, siga este processo:
 
 1. **Avalie a clareza da solicitação**:
    - Se for simples e clara (ex: componente com parâmetros definidos), gere o PRD diretamente.
-   - Se faltarem detalhes críticos (ex: valores obrigatórios não informados), faça **no máximo 2 perguntas diretas**, com opções claras (A/B/C ou sim/não).
+   - Se faltarem detalhes críticos, faça **no máximo 2 perguntas diretas**, com opções claras (A/B/C ou sim/não).
 
 2. **Assuma valores padrão quando razoável**:
    - Ex: cor padrão = "primária", piscar = desativado, formato = "arredondado".
@@ -17,10 +17,15 @@ Quando o usuário descrever uma funcionalidade, siga este processo:
 
 3. **Estrutura do PRD (obrigatória)**:
    - Use Markdown.
-   - Nome do arquivo: `prd-[nome-da-feature].md`
+   - Nome do arquivo: `prd-NNN-[nome-da-feature].md` (onde `NNN` é um número com 3 dígitos, iniciando em `001`).
    - Diretório: `/tasks/`
+   - O número deve ser **incrementado a cada novo PRD gerado** (o AI deve acompanhar ou assumir o próximo número lógico, ex: se o último foi 003, o próximo é 004).
 
-4. **Conteúdo mínimo do PRD**:
+4. **Dedução vs. Perguntas**:
+   - O AI deve **tentar deduzir todas as informações necessárias** a partir da solicitação inicial.
+   - Apenas se **faltar um dado essencial** (ex: valores de cor não definidos, comportamento crítico ausente), o AI deve fazer **no máximo 2 perguntas diretas**, com opções claras (ex: A/B ou sim/não).
+   - Sempre que assumir um valor, **deve deixar explícito no PRD** (ex: "Cor padrão: primária (assumido)").
+
    1. **Introdução**  
       Breve descrição do que é a funcionalidade e onde será usada.
 
@@ -47,7 +52,7 @@ Quando o usuário descrever uma funcionalidade, siga este processo:
 
 5. **Público-alvo**: Desenvolvedor júnior.  
    - Linguagem clara, direta, sem jargões desnecessários.
-   - Detalhe suficiente para implementação imediata.
+   - Detalhe suficiente para implementação baseado no levantamento.
 
 6. **Não implemente o código** — apenas gere o PRD.
 
@@ -57,4 +62,6 @@ Quando o usuário descrever uma funcionalidade, siga este processo:
 > "Quero um componente Badge parametrizado com título, formato (retangular ou arredondado), cor (primária, secundária, sucesso, alerta, erro) e opção de piscar com intervalo em ms."
 
 ## Saída esperada:
-Arquivo `prd-badge-parametrizado.md` dentro da pasta `/tasks`, com o PRD completo no formato acima.
+Arquivo `prd-001-badge-parametrizado.md` dentro da pasta `/tasks`, com o PRD completo no formato acima.
+
+> ⚠️ Nota: O AI deve **rastrear ou assumir o próximo número sequencial**. Se não houver contexto de número anterior, comece com `001`.
